@@ -1,0 +1,114 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+body {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 { margin-bottom: 6px; }
+
+.info { margin-bottom: 10px; text-align: center; }
+.moves { font-size: 18px; font-weight: bold; }
+.min-moves { font-size: 14px; color: #93c5fd; margin-top: 4px; }
+
+.controls { margin-bottom: 15px; }
+
+
+button {
+  padding: 10px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover { background: #16a34a; }
+
+.game {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  min-height: 260px;
+}
+
+.tower {
+  width: 160px;
+
+
+  min-height: 260px;        
+  height: auto;             
+
+  padding: 10px 6px 6px;   
+
+  border: 3px solid #334155;
+  border-radius: 16px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: #020617;
+  transition: 0.2s;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.tower-label {
+  
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tower.drag-over { background: #1d4ed8; border-color: #60a5fa; }
+
+.rod {
+  width: 6px;
+  height: 90%;
+  background: #64748b;
+  position: absolute;
+  bottom: 10px;
+  border-radius: 4px;
+   background: linear-gradient(90deg, #94a3b8, #475569, #94a3b8);
+  box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+.disk {
+  height: 22px;
+  border-radius: 12px;
+  margin-bottom: 5px;
+  transition: transform 0.15s ease, box-shadow 0.15s;
+  cursor: grab;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+}
+
+.disk:active { transform: scale(1.08); cursor: grabbing; }
+
+.win { color: #4ade80; font-weight: bold; margin-top: 62px; font-size: 18px; }
+
+@media (max-width: 500px) {
+  .game { gap: 10px; }
+  .tower { width: 90px; }
+}

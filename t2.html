@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tower of Hanoi Game</title>
+
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>🗼 Tower of Hanoi</h1>
+
+  <div class="info">
+    <div class="moves">Moves: <span id="moveCount">0</span></div>
+    <div class="min-moves">Minimum moves: <span id="minMoves">0</span></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="resetGame()">Reset</button>
+    <button onclick="changeDisks(1)">+ Disk</button>
+    <button onclick="changeDisks(-1)">- Disk</button>
+    <button onclick="showSolution()">Show Solution</button>
+    
+  </div>
+
+  <div class="game" id="game"></div>
+  <div class="win" id="winMsg"></div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
